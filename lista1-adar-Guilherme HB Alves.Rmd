@@ -1,0 +1,143 @@
+---
+title: " lista1-adar-Guilherme H B Alves.Rmd"
+output: html_notebook
+---
+```{r}
+#1) Execute as seguintes expressões no R mostrando os resultados obtidos.
+1 + 1
+100:130
+5 - +1
+2 * 3
+4 - 1
+6 / (4 - 1)
+3 % 5
+```
+
+```{r}
+#2) Utilize uma expressão para cada item.
+#a)
+expressao1 <- function(x){x+3}
+expressao1(47)
+#b)
+expressao2 <- function(x){expressao1(47)*x}
+expressao2(2)
+#c)
+expressao3 <- function(x){expressao2(2)-x}
+expressao3(10)
+#d)
+expressao4 <- function(x){expressao3(10)/x}
+expressao4(4)
+```
+
+```{r}
+#3) Calcule
+sqrt(16)
+16^0.5^3
+(16^0.5)^3
+4^(3/2)
+```
+
+```{r}
+#4) Teste as expressões
+log10(1000)
+log(1000)
+exp(log(1000))
+log2(64)
+```
+
+```{r}
+#5) Defina as variáveis abaixo tomando cuidados ao nomear as variáveis, conforme visto em sala de aula. Mostre os valores para as seguintes constantes:
+veloci_luz <- 2.998*10^8
+carga_ele <- 1.602*10^(-19)
+permi_vacuo <- 8.85*10^(-12)
+const_planck <- 6.626*10^(-34)
+const_stebolt <- 5.67*10^(-8)
+const_solar <- 1380
+const_avogrado <- 6.022*10^23
+const_arseco <- 287.4
+const_vapor <- 461.5
+densi_arseco <- 1.2754
+press_mean_atm <- 1013.25
+temp_mean_atm <- 288.15
+calor_cond <- 2.501*10^6
+calor_fusao <- 0.344*10^6
+massa_moleh2o <- 18.106
+peso_molear <- 28.96
+raio_terra <- 6.37*10^6
+veloc_ang_terra <- 7.29*10^(-5)
+```
+
+```{r}
+#6) Como você pode fazer para que a constante pi seja mostrada com 20 dígitos? (b) Como voltar a trabalhar a com 7 dígitos novamente? c. Mostre o número neperiano com 7 dígitos.
+
+#a)
+options(digits = 20)
+getOption("digits")
+pi
+
+#b)
+options(digits = 7)
+getOption("digits")
+pi
+
+#c)
+options(digits = 7)
+getOption("digits")
+exp(1)
+```
+
+```{r}
+#7) Determine a temperatura de bulbo úmido (tw) usando a expressão empírica abaixo.
+t <- 20
+ur <- 70
+tw <- t*atan(0.151977*(ur+8.313659)^(1/2))
+      +atan(t+ur)-atan(ur-1.676331)+(0.00391838*(ur)^(3/2))*atan(0.023101*ur)
+      -4.686035
+print(tw)
+
+```
+
+```{r}
+#8) 
+SI<- 16.29
+CL<- 49.25
+Db<- 1.25
+Me<- 25  
+
+x14 <- - 1.05501 + 0.0650857*SI
+
+x15 <- -2.07588 + 0.0423954*CL
+
+x16 <- -6.03402 + 4.80572*Db
+
+x17 <- -2.18409 + 8.84963*Me/100
+
+z9 <- 0.175202 + 1.18513*x17 - 0.0996042*(x17)^2 + 0.327915*x16 - 0.0758657*(x16)^2
+
+z10 <- 0.929344*z9 + 0.132519*x14
+
+teta_kpa <- 0.339255 + 0.112526*z10
+
+z11 <- 0.191452 + 1.25652*x17 - 0.079098*(x17)^2 + 0.393814*x16 + 0.152095*x17*x16
+
+teta33_kpa <- 0.28951 + 0.103815*z11
+
+z13 <- 0.235084 + 0.33033*x15 - 0.191838*(x15)^2 + 0.0543679*(x15)^3 + 0.977685*x17+
+  0.304174*x15*x17 - 0.218857*(x17)^2 - 0.164373*x15*(x17)^2 + 0.0415057*(x17)^3+
+  0.373361*x16 + 0.0811861*x17*x16 - 0.0768087*x15*x17*x16
+
+teta1500_kpa <- 0.214008 + 0.0862945*z13
+
+print(teta_kpa)
+print(teta33_kpa)
+print(teta1500_kpa)
+
+```
+
+```{r}
+#9) Arredonde para 2 casas decimais os resultados da questão 8.
+round(teta_kpa, 2)
+round(teta33_kpa, 2)
+round(teta1500_kpa, 2)
+```
+
